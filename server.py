@@ -147,5 +147,36 @@ def simulate_failure():
 def page_not_found(e):
     return jsonify({"error": "Endpoint not found"}), 404
 
+@app.route('/delete', methods=['DELETE'])
+def remove_servers():
+    data = request.json
+    hostnames = data.get('hostnames')
+
+    # Perform sanity checks on the request payload
+    if hostnames is None:
+        return jsonify({"error": "'hostnames' must be provided"}), 400
+
+    if not isinstance(hostnames, list):
+        return jsonify({"error": "'hostnames' must be a list"}), 400
+
+    # Remove server instances with specified hostnames
+    removed_count = 0
+    for hostname in hostnames:
+        if hostname in server_replicas:
+            server_replicas.remove(hostname)
+            consistent_hashing.servers = [(virtual_server_id, server_id) for virtual_server_id, server_id in consistent_hashing.servers if server_id != hostname]
+            removed_count += 1
+
+    if removed_count > 0:
+        return jsonify({
+            "message": f"Removed {removed_count} server instance(s)",
+            "status": "successful"
+        }), 200
+    else:
+        return jsonify({
+            "error": "No matching server instances found for removal",
+            "status": "failure"
+        }), 400
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
