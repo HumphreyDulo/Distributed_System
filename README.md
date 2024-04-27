@@ -39,6 +39,13 @@ In this project, we conduct an analysis of a load balancer implemented using con
    
    - **Add new server instance**:Endpoint /add will add new server instances in the load balancer
    - [Example Image](./images/add.png)
+   - **Delete**
+   - [Example Image](./images/delete.png)
+   - **Test endpoint**
+   - [Example Image](./images/endpoint3.png)
+   - [Example Image](./images/endpoint4.png)
+ 
+
 
 
 4. **4: Analysis**
