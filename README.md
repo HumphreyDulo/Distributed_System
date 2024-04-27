@@ -26,8 +26,8 @@ In this project, we conduct an analysis of a load balancer implemented using con
 
 1. **1: Distribution of Requests**
    - Ability to send requests to /home and /heartbeat and receive Json response
-   - [Example Image](./images/home.png)
-   - [Example Image](./images/heartbeat.png)
+   - ![Cheese](./images/home.png)
+   - ![Cheese](./images/heartbeat.png)
 
 2. **2: Hash Function**
    - This block of code defines the hash functions and implements the Consistent Hashing class, which is responsible for mapping requests to server containers based on their hash values and maintaining the virtual server mappings to ensure balanced load distribution.
@@ -37,31 +37,29 @@ In this project, we conduct an analysis of a load balancer implemented using con
    - **Observations**:
    - ![Cheese](./images/replicas.png)
    
-   - **Add new server instance**:Endpoint /add will add new server instances in the load balancer
-   - [Example Image](./images/add.png)
+   - **Add new server instance**: Endpoint /add will add new server instances in the load balancer
+   - ![Cheese](./images/add.png)
    - **Delete**
-   - [Example Image](./images/delete.png)
+   - ![Cheese](./images/delete.png)
    - **Test endpoint**
-   - [Example Image](./images/endpoint3.png)
-   - [Example Image](./images/endpoint4.png)
+   - ![Cheese](./images/endpoint3.png)
+   - ![Cheese](./images/endpoint4.png)
  
 
 
 
 4. **4: Analysis**
    - **Description**: Test the load balancer's scalability by varying the number of server containers.
-   - [Example Image](./images/n=3.png)
-   - [Example Image](./images/n=2-6.png)
+   - ![Cheese](./images/n=3.png)
+   - ![Cheese](./images/n=2-6.png)
    - **Observations**: The server load is more likely to distributed when there are a greater number of server containers.
-   - N=2-6[Example Image](./images/Graph_n=2-6.png)
-   - [Example Image](./images/Graph_n=3.png)
+   - N=2-6![Cheese](./images/Graph_n=2-6.png)
+   - ![Cheese](./images/Graph_n=3.png)
    - 
    - **Response to server failure**: In case of server failure, a new instance should be created to handle the load. 
    - Trigger failure using the server failure endpoint
-   - [Example Image](./images/serverfailure1.png)
-   - [Example Image](./images/serverfailure2.png)
+   - ![Cheese](./images/serverfailure1.png)
+   - ![Cheese](./images/serverfailure2.png)
 ---
 
 ## Conclusion
-
-
