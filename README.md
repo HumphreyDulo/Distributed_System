@@ -35,7 +35,7 @@ In this project, we conduct an analysis of a load balancer implemented using con
 3. **3: Load Balancer Scalability**
    - **Server replicas**: request the replica endpoint to view number of replica servers.
    - **Observations**:
-   - [Example Image](./images/replicas.png)
+   - ![Cheese](./images/replicas.png)
    
    - **Add new server instance**:Endpoint /add will add new server instances in the load balancer
    - [Example Image](./images/add.png)
